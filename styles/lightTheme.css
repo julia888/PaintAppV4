@@ -1,0 +1,10 @@
+body{
+    background: white;
+}
+#addTab, #addLayer{
+    background: #000000b5;
+    color: white;
+}
+h1{
+    color: black;
+}

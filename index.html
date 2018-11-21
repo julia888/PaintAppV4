@@ -1,0 +1,91 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="script/script.js"></script>
+    <script src="script/addTabs.js"></script>
+    <script src="script/addLayer.js"></script>
+    <script src="script/delTabs.js"></script>
+    <script src="script/delLayer.js"></script>
+    <script src="script/settings.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link id="lightStyle" rel="stylesheet" href="styles/lightTheme.css">
+</head>
+<body id="body">
+<header>
+    <h1 id="titleHeader" >Paint App</h1>
+</header>
+    <div class="main">
+
+        <div class="left_col">
+            <div class="controls">
+                <p id="titleColor">Color</p>
+                <input type="text" name="input_form" id="input_form" value="">
+                <p id="titleFigure">Figure</p>
+                <select id="selectFigure">
+                    <option id="rectangle" value="rectangle">rectangle</option>
+                    <option id="circle" value="circle">circle</option>
+                    <option id="hexagon" value="hexagon">hexagon</option>
+                </select><br>
+                <button type="button" id="pen" onclick="setPen()">Pen</button>
+                <p id="titleSize">Size</p>
+                <input type="range" id="size" min="0" max="100" step="1" value="1" oninput="changeSize()">
+            </div>
+            <div>
+                <h3 id="titleStatus">Status</h3>
+                <p id="titleColorText">Color: <span id="colorName">black</span></p>
+                <div id="color"></div>
+            </div>
+            <div>
+                <h3 id="titleSettings">Settings</h3>
+                <button id="change" onclick="changeSettings()">Change</button>
+                <div id="changeSettings" style="display: none">
+                    <div class="themeBlock" >
+                        <div id="themeBtn" onclick="changeTheme()">Theme</div>
+                        <div id="selectTheme" style="display: none">
+                            <button id="lightTheme" onclick="changeToLightTheme()">Light</button><br>
+                            <button id="darkTheme" onclick="changeToDarkTheme()">Dark</button>
+                        </div>
+                    </div>
+                    <div class="langBlock">
+                        <div id="LangBtn" onclick="changeLang()">Language</div>
+                        <div id="selectLang" style="display: none">
+                            <button id="enLang" onclick="changeToEnglish()">English</button><br>
+                            <button id="ruLang" onclick="changeToRussian()">Russian</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="canvasAndTabs">
+            <div id="tabs">
+                <!--<input type="button" value="Add Tab" id="addTab" onclick="addTab()">-->
+                <button id="addTab" onclick="addTab()">Add Tab</button>
+                <!--здесь будут табы-->
+                <div id="blockTabs">
+
+                </div>
+            </div>
+
+            <div id="allContent">
+                <div id="Layers">
+                    <!--<input type="button" value="Add Layer" id="addLayer" onclick="addLayer()">-->
+                    <button id="addLayer" onclick="addLayer()">Add Layer</button>
+
+                </div>
+                <div id="canvasWrapper">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p> <span id="titleCoordinates">Coordinates: </span><span id="coordinates"></span></p>
+        <p id="language">en</p>
+    </footer>
+</body>
+</html>
